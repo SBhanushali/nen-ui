@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { sizes, colors } from "../../config/theme";
 import { variants } from "./buttonVariants";
 import styled from "styled-components";
@@ -51,3 +52,15 @@ const Button = ({ variant, size, children, ...rest }) => {
 };
 
 export default Button;
+
+Button.defaultProps = {
+  variant: "primary",
+  size: "md",
+};
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  size: PropTypes.oneOf(["sm", "md", "lg"]).isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+};
