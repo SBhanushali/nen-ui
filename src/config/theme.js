@@ -38,3 +38,8 @@ const sizes = {
     paddingX: 12,
   },
 };
+
+export default {
+  colors,
+  sizes,
+};
