@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   white: "#FFFFFF",
   blue: {
     10: "#ECF2FF",
@@ -21,7 +21,7 @@ const colors = {
   },
 };
 
-const sizes = {
+export const sizes = {
   lg: {
     h: 48,
     fontSize: 14,
@@ -37,9 +37,4 @@ const sizes = {
     fontSize: 10,
     paddingX: 12,
   },
-};
-
-export default {
-  colors,
-  sizes,
 };
