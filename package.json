@@ -1,17 +1,13 @@
 {
   "name": "nen-ui",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.2.3",
-    "styled-system": "^5.1.5",
-    "web-vitals": "^1.0.1"
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,7 +45,14 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@storybook/addon-a11y": "^6.2.4",
     "@storybook/addon-actions": "^6.2.3",
     "@storybook/addon-essentials": "^6.2.3",
@@ -57,6 +60,9 @@
     "@storybook/node-logger": "^6.2.3",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.3",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
   }
 }
