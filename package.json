@@ -1,10 +1,14 @@
 {
   "name": "nen-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "src/index.js",
   "files": [
-    "src"
+    "src/",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "!src/**/*.test.js",
+    "!src/**/*.stories.jsx"
   ],
   "dependencies": {
     "styled-components": "^5.2.3"
