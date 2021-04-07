@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "./button";
+import { ThemeProvider } from "styled-components";
+import { light, dark } from "../../config/buttonTheme";
 import { IoAdd } from "react-icons/io5";
 
 export default {
@@ -10,7 +12,11 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => (
+  <ThemeProvider theme={light}>
+    <Button {...args} />
+  </ThemeProvider>
+);
 
 export const Primary = Template.bind({});
 
@@ -67,6 +73,7 @@ LeftIconButton.args = {
   variant: "ghost",
   children: "Primary Button",
   icon: <IoAdd />,
+  title: "Primary Add",
 };
 
 export const RightIconButton = Template.bind({});
@@ -76,6 +83,7 @@ RightIconButton.args = {
   children: "Primary Button",
   icon: <IoAdd />,
   align: "right",
+  title: "Primary Add",
 };
 
 export const IconButton = Template.bind({});
@@ -83,4 +91,5 @@ export const IconButton = Template.bind({});
 IconButton.args = {
   variant: "primary",
   icon: <IoAdd />,
+  title: "Add",
 };
