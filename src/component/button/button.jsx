@@ -43,10 +43,26 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ variant, size, children, ...rest }) => {
+const Icon = styled.span`
+  ${(props) =>
+    props.isOnlyIcon &&
+    `
+  margin-right: ${props.align !== "right" ? 5 : ""}px;
+  margin-left: ${props.align === "right" ? 5 : ""}px;
+`}
+`;
+
+const Button = ({ variant, size, children, icon, align, ...rest }) => {
+  const isOnlyIcon = children && true;
   return (
     <StyledButton variant={variant} size={size} {...rest}>
+      {icon && align !== "right" && <Icon isOnlyIcon={isOnlyIcon}>{icon}</Icon>}
       {children}
+      {icon && align && align === "right" && (
+        <Icon isOnlyIcon={isOnlyIcon} align={align}>
+          {icon}
+        </Icon>
+      )}
     </StyledButton>
   );
 };
@@ -54,7 +70,6 @@ const Button = ({ variant, size, children, ...rest }) => {
 export default Button;
 
 Button.defaultProps = {
-  variant: "primary",
   size: "md",
 };
 
