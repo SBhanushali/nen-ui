@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./button";
+import { IoAdd } from "react-icons/io5";
 
 export default {
   title: "Button",
@@ -58,4 +59,28 @@ Disabled.args = {
   variant: "primary",
   children: "Disabled Button",
   disabled: true,
+};
+
+export const LeftIconButton = Template.bind({});
+
+LeftIconButton.args = {
+  variant: "ghost",
+  children: "Primary Button",
+  icon: <IoAdd />,
+};
+
+export const RightIconButton = Template.bind({});
+
+RightIconButton.args = {
+  variant: "primary",
+  children: "Primary Button",
+  icon: <IoAdd />,
+  align: "right",
+};
+
+export const IconButton = Template.bind({});
+
+IconButton.args = {
+  variant: "primary",
+  icon: <IoAdd />,
 };
