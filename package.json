@@ -1,21 +1,32 @@
 {
   "name": "nen-ui",
-  "version": "0.1.1",
+  "version": "0.1.6",
   "private": false,
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/env"
+    ],
+    "ignore": [
+      "**/*.test.js",
+      "**/*.stories.js"
+    ]
+  },
   "files": [
-    "src/",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "!src/**/*.test.js",
-    "!src/**/*.stories.jsx"
+    "dist/",
+    "dist/**/*.js",
+    "!dist/**/*.test.js",
+    "!dist/**/*.stories.js"
   ],
   "dependencies": {
+    "prop-types": "^15.7.2",
     "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "npmBuild": "set NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src --out-dir dist --copy-files ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -54,9 +65,11 @@
     "react-dom": ">=17.0.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
     "@storybook/addon-a11y": "^6.2.4",
     "@storybook/addon-actions": "^6.2.3",
     "@storybook/addon-essentials": "^6.2.3",
@@ -64,9 +77,12 @@
     "@storybook/node-logger": "^6.2.3",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.3",
-    "react-icons": "^4.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-scripts": "4.0.3"
   }
 }
